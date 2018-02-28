@@ -16,7 +16,7 @@ body {
     background-color: #3f51b5 !important; 
 }
 .navbar:not(.top-nav-collapse) {
-    background: rgba(255, 255, 255, 0.4) !important;
+    background: rgba(255, 255, 255, 0.6) !important;
 }
 @media (max-width: 768px) {
     .navbar:not(.top-nav-collapse) {
@@ -24,12 +24,12 @@ body {
     } 
 }
 .sink {
-    margin-top: 1.5in;
+    margin-top: 0.9in;
 }
 .pushright {
-    margin-left: 0.2in;
+    margin-left: 0.1in;
 }
 .panel-default, .panel-bt {
-    background: rgba(0, 0, 0, 0.616) !important;
+    background: rgba(0, 0, 0, 0.66) !important;
     color: #ccddff;
 }

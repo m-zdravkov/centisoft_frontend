@@ -29,16 +29,36 @@
             });
         </script>
         
-        <div class="panel panel-bt sink pushright col-sm-6 col-md-4 col-lg-3">
+        <div id="sidebar-dashboard" class="panel pushright panel-bt sink col-sm-6 col-md-4 col-lg-3">
             <div class="panel-heading">
                 <h1>Statistics</h1>
                 <hr>
             </div>
-            <div class="panel-body" id="pCustomers">
-                <h3 id="hCustomers">Customers</h3>
-                <ul id="lCustomers"></ul>
+            <div class="panel-body">
+                <div id="pCustomers">
+                    <h3 id="hCustomers">Customers</h3>
+                    <ul id="lCustomers"></ul>
+                </div>
+                <div id="pProjects">
+                    <h3 id="hProjects">Projects</h3>
+                    <ul id="lProjects"></ul>
+                </div>
+                <div id="pDevelopers">
+                    <h3 id="hDevelopers">Developers</h3>
+                    <ul id="lDevelopers"></ul>
+                </div>
             </div>
         </div>
+        <!-- Animations -->
+        <script>
+            //Navbar
+            $('#_nav').css("opacity", 0.1);
+            $('#_nav').animate({opacity: '1'}, 1900);
+            //Sidebar
+            $('#sidebar-dashboard').css("opacity", 0.1);
+            $('#sidebar-dashboard').css("left", "-0.6in");
+            $('#sidebar-dashboard').animate({left:'0.3in', opacity: '1'}, 1900);
+        </script>
     </section>
     
 
