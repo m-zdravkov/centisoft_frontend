@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- View -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Including bootstrap and jQuery via a CDN -->
+    <!-- Bootstrap: Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap: Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        $.ajax({
+            type: 'GET',
+            contentType:'text/plain; charset=utf-8',
+            url: 'http://centisoft.gotomain.net/api/v1/developer',
+            headers: {'Authorization':'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJicmFpbmxldCIsImp0aSI6ImI0ZTlmMTAyLTRkNGYtNDkzMC05YmVkLTI4ZmE3OGQ0MTZkZCIsIm5iZiI6MTUxOTc4MjQ4MywiZXhwIjoxNTI0OTY2NDgzLCJpc3MiOiJTV0tHIiwiYXVkIjoiREVWUyJ9.qAv39HxaTp8zgUPnTBirqz1RLOlkmW9T8ZfpquIjTkI'},
+            success: function (res) {
+                //document.write('res:'+res);
+                var developers = res;
+                developers.forEach(d => {
+                   document.writeln(d.Name); 
+                });
+            },
+            error: function(res) {
+                alert('error:\n'+res);
+            }
+        });
+    </script>
+</body>
+</html>

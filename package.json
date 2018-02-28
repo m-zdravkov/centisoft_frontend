@@ -4,7 +4,8 @@
   "description": "Centisoft frontend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/m-zdravkov/centisoft_frontend/issues"
   },
-  "homepage": "https://github.com/m-zdravkov/centisoft_frontend#readme"
+  "homepage": "https://github.com/m-zdravkov/centisoft_frontend#readme",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
 }

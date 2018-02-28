@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- Register form, not used -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Including bootstrap and jQuery via a CDN -->
+    <!-- Bootstrap: Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap: Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div class="panel panel-default col-md-4">
+        <div class="panel-heading">
+            Register
+        </div>
+
+        <div class="panel-body">
+            <form>
+                <div lass="form-group">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Enter name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" class="form-control" id="inputUsername" placeholder="Enter username">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Enter password">
+                </div>
+
+                <button id="register" type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        
+        $(document).ready(function () {
+            $("form").submit(function() {
+                alert("Registering\n"
+                    +$("#inputName").val()+"\n"
+                    +$("#inputUsername")+"\n"
+                    +$("#inputPassword")+"\n"
+                );
+                $.ajax({
+                    type: 'POST',
+                    contentType:'application/json; charset=utf-8',
+                    url: 'http://centisoft.gotomain.net/api/v1/client/register',
+                    data: JSON.stringify({
+                        name: $("#inputName").val(),
+                        username: $("#inputUsername").val(),
+                        password: $("#inputPassword").val()
+                    }),
+                    success: function (res) {
+                        setCookie("auth_token", res.responseText, 2);
+                        alert("Success!\nauth_token:" + res.responseText);
+                    },
+                    error: function(res) {
+                        alert("Error!\n" + res.responseText);
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
