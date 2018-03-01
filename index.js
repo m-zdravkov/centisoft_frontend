@@ -43,10 +43,6 @@ $(document).ready(function () {
             showCustomersMenu();
         });
     });
-    /*$('#content').on('click', '#btnPostCustomer', function(e) {
-        e.preventDefault();
-        alert($('#customer-crud').serialize());
-    });*/
 });
 
 function showCustomersMenu() {
