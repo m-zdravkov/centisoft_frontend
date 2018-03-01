@@ -12,3 +12,21 @@ function getDevelopers(handle) {
         }
     });
 }
+function listDevelopers(maxListed) {
+    //Get developers
+    getDevelopers(function(developers) {
+        //handle(developers)
+
+        //Developers count
+        var nrDevelopers = developers.length;
+        $('#hDevelopers').html("Developers ("+nrDevelopers+")");
+        //Developers list
+        $.each(developers, function(i, item) {
+            $('#lDevelopers').append('<li>'+item.Name+'</li>');
+            if(i === maxListed-1) {
+                $('#pDevelopers').append('And '+(nrDevelopers-i-1)+' more...</br>');
+                return false;
+            }
+        });
+    });
+}

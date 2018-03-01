@@ -12,7 +12,7 @@ function getCustomers(handle) {
         }
     });
 }
-function listCustomers(maxListedCustomers) {
+function listCustomers(maxListed) {
     //Get customers
     getCustomers(function(customers) {
         //handle(customers)
@@ -23,7 +23,7 @@ function listCustomers(maxListedCustomers) {
         //Customers list
         $.each(customers, function(i, item) {
             $('#lCustomers').append('<li>'+item.Name+', '+item.Country+'</li>');
-            if(i === maxListedCustomers-1) {
+            if(i === maxListed-1) {
                 $('#pCustomers').append('And '+(nrCustomers-i-1)+' more...</br>');
                 return false;
             }
