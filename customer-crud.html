@@ -5,24 +5,26 @@
     <form id="customer-crud">
         <div class="form-group">
             <label for="tbName">Name</label>
-            <input type="text" class="form-control" id="tbName" placeholder="Enter name">
+            <input type="text" class="form-control" id="tbName" name="Name" placeholder="Enter name">
             <label for="tbAddress">Address</label>
-            <input type="text" class="form-control" id="tbAddress" placeholder="Enter address">
+            <input type="text" class="form-control" id="tbAddress" name="Address" placeholder="Enter address">
             <label for="tbZip">ZIP code</label>
-            <input type="text" class="form-control" id="tbZip" placeholder="Enter ZIP code">
+            <input type="text" class="form-control" id="tbZip" name="Zip" placeholder="Enter ZIP code">
             <label for="tbCity">City</label>
-            <input type="text" class="form-control" id="tbCity" placeholder="Enter city">
+            <input type="text" class="form-control" id="tbCity" name="City" placeholder="Enter city">
             <label for="tbCountry">Country</label>
-            <input type="text" class="form-control" id="tbCountry" placeholder="Enter country">
+            <input type="text" class="form-control" id="tbCountry" name="Country" placeholder="Enter country">
             <label for="tbEmail">E-mail</label>
-            <input type="email" class="form-control" id="tbEmail" placeholder="Enter email">
+            <input type="email" class="form-control" id="tbEmail" name="Email" placeholder="Enter email">
             <label for="tbPhone">Phone number</label>
-            <input type="tel" class="form-control" id="tbPhone" placeholder="Enter phone number">
+            <input type="tel" class="form-control" id="tbPhone" name="Phone" placeholder="Enter phone number">
+            <label for="tbClient">Client ID</label>
+            <input type="number" class="form-control" id="tbClient" name="ClientId" placeholder="Enter client id number">
             <br/>
             <div class="btn-group btn-group-sm">
                 <button type="button" id="btnCustomers" class="btn btn-default">Back to Customers</button>
                 <button type="submit" id="btnPostCustomer" class="btn btn-success">Add customer</button>
-                <button type="submit" id="btnPutCustomer-" class="btn btn-success">Save changes</button>
+                <button type="submit" id="btnPutCustomer-" class="btn btn-warning">Save changes</button>
             </div>
         </div>
     </form>

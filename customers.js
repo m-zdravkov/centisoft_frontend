@@ -34,8 +34,6 @@ function listCustomersTable() {
     //Get customers
     $('#customers-loader').show();
     getCustomers(function(customers) {
-        //handle(customers)
-
         //Customers list
         $.each(customers, function(i, item) {
             $('#customers-table').append(
@@ -58,13 +56,32 @@ function listCustomersTable() {
                 +'</tr>'
             );
             //Add event handlers for the buttons
-            $('#content').on('click', '#custEdit-'+item.Id, function() {
-                alert('edit');
+            
+            $('#custEdit-'+item.Id).on('click', function() {
+                displayContent("customer-crud.html", function() {
+                    $('#btnPutCustomer-').fadeIn();
+                });
             });
-            $('#content').on('click', '#custDelete-'+item.Id, function() {
+            $('#custDelete-'+item.Id).on('click', function() {
                 alert('delete');
             });
+
+            $('#customers-loader').hide();
         });
-        $('#customers-loader').hide();
+    });
+}
+function postCustomer(formData, handle) {
+    $.ajax({
+        type: 'POST',
+        contentType:'application/json; charset=utf-8',
+        url: 'http://centisoft.gotomain.net/api/v1/customer',
+        headers: {'Authorization':'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJicmFpbmxldCIsImp0aSI6ImI0ZTlmMTAyLTRkNGYtNDkzMC05YmVkLTI4ZmE3OGQ0MTZkZCIsIm5iZiI6MTUxOTc4MjQ4MywiZXhwIjoxNTI0OTY2NDgzLCJpc3MiOiJTV0tHIiwiYXVkIjoiREVWUyJ9.qAv39HxaTp8zgUPnTBirqz1RLOlkmW9T8ZfpquIjTkI'},
+        data: formData,
+        success: function (res) {
+            handle(res);
+        },
+        error: function(res) {
+            alert('customers error:\n'+res);
+        }
     });
 }
