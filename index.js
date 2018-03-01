@@ -18,10 +18,10 @@ $(document).ready(function () {
         showCustomersMenu();
     });
     $('#sidebar-dashboard').on('click', '#pProjects', function() {
-        displayContent("projects.html");
+        showProjectsMenu();
     });
     $('#sidebar-dashboard').on('click', '#pDevelopers', function() {
-        displayContent("developers.html");
+        showDevelopersMenu();
     });
     
     //Content events (edit and delete are handled in the specific .js file)
@@ -48,5 +48,15 @@ $(document).ready(function () {
 function showCustomersMenu() {
     displayContent("customers.html", function() {
         listCustomersTable();
+    });
+}
+function showProjectsMenu() {
+    displayContent("projects.html", function() {
+        listProjectsTable();
+    });
+}
+function showDevelopersMenu() {
+    displayContent("developers.html", function() {
+        listDevelopersTable();
     });
 }

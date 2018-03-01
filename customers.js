@@ -63,7 +63,7 @@ function listCustomersTable() {
                 });
             });
             $('#custDelete-'+item.Id).on('click', function() {
-                alert('delete');
+                alert('delete '+$(this).attr('id'));
             });
 
             $('#customers-loader').hide();
