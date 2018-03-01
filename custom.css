@@ -33,6 +33,33 @@ body {
     margin-left: 0.1in;
 }
 .panel-default, .panel-bt {
-    background: rgba(0, 0, 0, 0.66) !important;
+    background: rgba(0, 0, 0, 0.66);
     color: #ccddff;
+    margin-right: 0.2cm;
+}
+.invisible { /*for animations*/
+    opacity: 0;
+}
+/*Hover table row*/
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #111111;
+    opacity: 1;
+}
+.loader {
+    border: 16px solid rgba(32, 32, 32, 0.5);
+    border-radius: 50%;
+    border-top: 16px solid rgba(113, 148, 186, 0.5);
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

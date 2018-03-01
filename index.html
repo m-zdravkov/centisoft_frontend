@@ -40,18 +40,11 @@
             });
         </script>
     </section>
-    
-    <!-- Animations -->
-    <script>
-        $(document).ready(function() {
-            //Navbar
-            $('#_nav').css("opacity", 0.1);
-            $('#_nav').animate({opacity: '1'}, 1900);
-            //Sidebar
-            $('#sidebar-dashboard').css("opacity", 0.1);
-            $('#sidebar-dashboard').css("left", "-0.6in");
-            $('#sidebar-dashboard').animate({left:'0.3in', opacity: '1'}, 1900);
-        });
-    </script>
+
+    <!-- Main content panel -->
+    <section>
+        <div id="content" class="panel panel-bt sink col-sm-6 col-md-8"></div>
+        <!-- This one is empty until we load some content -->
+    </section>
 </body>
 </html>
